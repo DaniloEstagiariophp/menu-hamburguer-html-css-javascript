@@ -12,6 +12,7 @@ li{
 }
 img{
     max-width: 100%;
+    display: block;
 }
 /* header */
 .container-header{
@@ -53,7 +54,7 @@ nav{
 .ul-list > li > a{
     font-size: 1.3rem;
     font-family: helvetica, sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     color: darkblue;
     letter-spacing: 1px;
     padding: 0.2rem
@@ -106,6 +107,50 @@ nav{
 .hambuger.active .line:nth-child(3){
     transform: translateY(-8px) rotate(-45deg);
 }
+/* cofinguração da sessão banner{MAIN} /* section-main */
+.container-main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    max-width: 1280px;
+    background: lightyellow;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    padding: 0.8rem;
+    overflow: hidden;
+}
+.section-img:nth-child(1){
+    grid-row: 1/3;
+}
+.section-img > img:nth-child(1){
+    height: 100%;
+}
+.section-img{
+    display: grid;
+}
+.section-img > img{
+    grid-column: 1;
+    grid-row: 1/3;
+    align-self: end;
+    object-fit: cover;
+}
+.section-img > figcaption{
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.8rem;
+    color: #fff;
+    /* grid-column: 1;
+    grid-row: 2;
+    align-self: end; */
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+    font-family: helvetica, sans-serif;
+    font-weight: 300;
+}
+figcaption > h1{
+    font-size: 1.4rem;
+}
+figcaption > h2{
+    font-size: 1rem;
+}
 /* CONFIGURAÇÕES DE MEDIAS QUERY PARA CELULARES MODO FOTOGRAFIA */
 @media(max-width: 640px) {
     .ul-list{
@@ -155,6 +200,13 @@ nav{
             transform: translateY(0);
         }
     }
+
+    figcaption > h1{
+        font-size: 1.2rem;
+    }
+    figcaption > h2{
+        font-size: 1rem;
+    }
 }
 /* media query configuação ->[MENU DE NAVEGAÇÃO] 572px; */
 @media(max-width: 572px) {
@@ -202,6 +254,12 @@ nav{
     .section-social > a{
         padding: 0.4rem;
     }
+    .container-main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 }
 /* media query configuração ->[menu de NAVEGAÇÃO e section-social -icons] 418px; */
 @media(max-width: 418px) {
@@ -229,6 +287,7 @@ nav{
     .section-social{
         margin-top: 80%;
     }
+}
     /* media query configuração ->[menu de NAVEGAÇÃO e section-social -icons] 280px; */
 @media(max-width: 280px) {
         .ul-list{
